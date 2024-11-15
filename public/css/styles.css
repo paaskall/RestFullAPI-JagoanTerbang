@@ -1,0 +1,30 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+form {
+    margin: 2rem;
+}
+
+#results {
+    margin: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+}

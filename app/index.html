@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%; /* You can adjust this width as needed */
+            max-width: 1200px; /* Adjust this if you want a different maximum width */
+            margin: 20px auto; /* Centers the container horizontally */
+            padding: 20px;
+            background-color: #fff;
+            box-sizing: border-box; /* Ensures padding is included in the width */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: #555;
+            margin-top: 25px;
+        }
+
+        p, ul, pre {
+            margin: 15px 0;
+        }
+
+        .endpoint {
+            background-color: #e9faff;
+            padding: 10px;
+            border: 1px solid #99d9ff;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .endpoint h3 {
+            margin: 0;
+            color: #007acc;
+        }
+
+        .endpoint p {
+            margin: 10px 0;
+        }
+
+        .usage {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .usage h3 {
+            margin: 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>API Documentation</h1>
+
+    <section class="endpoint">
+        <h3>Endpoint 1: GET /shipping_cost</h3>
+        <p>This endpoint is used to retrieve the shipping cost based on the origin, destination, and weight.</p>
+        <ul>
+            <li><strong>Method:</strong> GET</li>
+            <li><strong>Authentication:</strong> API Key required</li>
+        </ul>
+        <h4>Parameters</h4>
+        <ul>
+            <li>origin (required) - Origin city code</li>
+            <li>destination (required) - Destination city code</li>
+            <li>weight (required) - Package weight in kilograms</li>
+        </ul>
+        <h4>Response Format</h4>
+        <pre>
+{
+    "status": "success",
+    "data": {
+        "cost": 50000,
+        "estimated_days": 3
+    }
+}
+        </pre>
+    </section>
+
+    <section class="usage">
+        <h3>Usage Examples</h3>
+        <h4>Example Request</h4>
+        <pre>
+GET /shipping_cost?origin=JKT&destination=BDO&weight=5
+        </pre>
+        <h4>Example Response</h4>
+        <pre>
+{
+    "status": "success",
+    "data": {
+        "cost": 50000,
+        "estimated_days": 3
+    }
+}
+        </pre>
+    </section>
+
+    <!-- Add more sections for additional endpoints, authentication details, rate limits, etc. -->
+
+</div>
+
+</body>
+</html>

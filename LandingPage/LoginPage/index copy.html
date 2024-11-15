@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500;700&display=swap");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Ubuntu", sans-serif;
+        }
+        body {
+            width: 100%;
+            height: 100vh;
+            position: relative; /* Added */
+            background-color: whitesmoke;
+            margin: 0; /* Added to reset default margin */
+        }
+        .navbar {
+            background-color: #4b5320; /* Army green */
+            padding: 1rem;
+            width: 100%;
+            position: absolute; /* Added */
+            top: 0; /* Added */
+            left: 0; /* Added */
+            z-index: 999; /* Added */
+            display: flex; /* Added */
+            justify-content: space-between; /* Added */
+            align-items: center; /* Added */
+        }
+        .navbar .logo {
+            color: white; /* Added */
+            font-weight: bold; /* Added */
+            font-size: 1.2rem; /* Added */
+            margin-left: 1rem; /* Added */
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar li {
+            margin-right: 1rem;
+        }
+        .navbar li:last-child {
+            margin-right: 0;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #fffbfb; /* Lighter color on hover */
+        }
+        .container {
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 1rem 3rem;
+            border-radius: 0.5rem;
+            margin-top: 5rem; /* Adjusted margin */
+        }
+        .container form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+        }
+        .container h2 {
+            font-size: 1.5rem;
+            margin: 2rem;
+        }
+        .container form input {
+            font-weight: lighter;
+            border: none;
+        }
+        input:focus {
+            outline: none;
+        }
+        .container form .username {
+            margin-bottom: 0.7rem;
+        }
+        .container form i {
+            font-size: 1rem;
+            margin-right: 0.5rem;
+        }
+        .container form input {
+            font-size: 1rem;
+        }
+        .userArea {
+            margin-bottom: 0.7rem;
+        }
+        .inputDiv {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 0.8rem;
+        }
+        .formBottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .formBottom ul {
+            margin-bottom: 3rem;
+        }
+        .formBottom p {
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+        }
+        .flexUl {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .flexUl a {
+            text-decoration: none;
+        }
+        .flexUl li {
+            list-style: none;
+        }
+        .flexUl li i {
+            height: 35px;
+            width: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .fa-brands {
+            margin-top: 1rem;
+            cursor: pointer;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 50%;
+        }
+        .btn {
+            border: none;
+            border-radius: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 0.5rem;
+            background: #4b5320;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+            color: #fffbfb;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">JagoanTerbang</div>
+        <ul>
+            <li><a href="/LandingPage/dokumentasi.html">Home</a></li>
+            <li><a href="index.html">Login</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h2 class="t-center">Register</h2>
+        <form action="">
+            <div class="inputDiv">
+                <label for="name" class="username">Username</label>
+                <div class="userArea">
+                    <i class="fa-solid fa-user"></i><input type="text" name="name" id="name" placeholder="Type your username">
+                </div>
+                <hr/>
+            </div>
+            <div class="inputDiv">
+                <label for="E-mail" class="username">E-mail</label>
+                <div class="userArea">
+                    <i class="fa-solid fa-key"></i><input type="text" name="email" id="email" placeholder="Type your E-mail">
+                </div>
+                <hr/>
+            </div>
+            <div class="inputDiv">
+                <label for="password" class="username">Password</label>
+                <div class="userArea">
+                    <i class="fa-solid fa-key"></i><input type="password" name="password" id="password" placeholder="Type your password">
+                </div>
+                <hr/>
+            </div>
+            <button class="btn">Register</button>
+        </form>
+    </div>
+</body>
+</html>

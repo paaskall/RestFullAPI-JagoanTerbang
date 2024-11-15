@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi API JagoanTerbang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 80px;
+            margin-bottom: 20px;
+        }
+        .navbar {
+            background-color: #4b5320; /* Army green */
+            padding: 1rem;
+            width: 100%;
+            position: absolute; /* Added */
+            top: 0; /* Added */
+            left: 0; /* Added */
+            z-index: 999; /* Added */
+            display: flex; /* Added */
+            justify-content: space-between; /* Added */
+            align-items: center; /* Added */
+        }
+        .navbar .logo {
+            color: white; /* Added */
+            font-weight: bold; /* Added */
+            font-size: 1.2rem; /* Added */
+            margin-left: 1rem; /* Added */
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar li {
+            margin-right: 1rem;
+        }
+        .navbar li:last-child {
+            margin-right: 0;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #fffbfb; /* Lighter color on hover */
+        }
+        /* Content Styles */
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .endpoint-card {
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background-color: #4b5320; /* Soft gray */
+            color: #fff;
+            font-weight: bold;
+        }
+        .card-body {
+            background-color: #fff;
+        }
+        .card-title {
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .method {
+            margin-left: 10px;
+            padding: 3px 8px;
+            border-radius: 5px;
+            color: #fff;
+        }
+        .method-get {
+            background-color: #28a745; /* Green for GET */
+        }
+        .method-post {
+            background-color: #007bff; /* Blue for POST */
+        }
+        .endpoint-description {
+            margin-top: 10px;
+            color: #666;
+        }
+        /* Footer Styles */
+        footer {
+            background-color: #4b5320; /* Green Army */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            bottom: 0;
+        }
+
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">JagoanTerbang</div>
+        <ul>
+            <li><a href="/LandingPage/index.html">Home</a></li>
+            <li><a href="/LandingPage/LoginPage/index.html">Login</a></li>
+            <li><a href="/LandingPage/LoginPage/index copy.html">Register</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center section-title" id="section-endpoint">Dokumentasi API JagoanTerbang</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section" id="section-endpoint">
+                    <h2 class="section-title">Method & Params</h2>
+                    <div class="card endpoint-card">
+                        <div class="card-header">Penerbangan</div>
+                        <div class="card-body">
+                            <h5 class="card-title">/penerbangan</h5>
+                            <p class="card-text endpoint-description">End point ini akan menampilkan keseluruhan data penerbangan</p>
+                            <p class="card-text"><span class="method method-get">GET</span></p>
+                            <!--<h6 class="card-text endpoint-description text-center">Parameter</h6>-->
+                            <table class="table mx-auto">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Url</th>
+                                        <th scope="col">Method</th>
+                                        <th scope="col">Parameter</th>
+                                        <th scope="col">Tipe</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>http://127.0.0.1:8000<br>/api/penerbangan</td>
+                                        <td>Get</td>
+                                        <td>Tidak ada</td>
+                                        <td>String</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card endpoint-card">
+                        <div class="card-header">Destinasi</div>
+                        <div class="card-body">
+                            <h5 class="card-title">/penerbangan/destination/{destination}</h5>
+                            <p class="card-text endpoint-description">End point ini akan menampilkan data dengan destinasi tertentu</p>
+                            <p class="card-text"><span class="method method-post">POST</span></p>
+                            <table class="table mx-auto">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Url</th>
+                                        <th scope="col">Method</th>
+                                        <th scope="col">Parameter</th>
+                                        <th scope="col">Tipe</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>http://127.0.0.1:8000<br>/api/penerbangan/destination</td>
+                                        <td>Post</td>
+                                        <td>destination</td>
+                                        <td>String</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card endpoint-card">
+                        <div class="card-header">Asal</div>
+                        <div class="card-body">
+                            <h5 class="card-title">/penerbangan/source/{source}</h5>
+                            <p class="card-text endpoint-description">End point ini akan menampilkan data penerbangan dengan asal tertentu</p>
+                            <p class="card-text"><span class="method method-post">POST</span></p>
+                        </div>
+                        <table class="table mx-auto">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Url</th>
+                                    <th scope="col">Method</th>
+                                    <th scope="col">Parameter</th>
+                                    <th scope="col">Tipe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+
+                                    <td>Post</td>
+                                    <td>source</td>
+                                    <td>String</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card endpoint-card">
+                        <div class="card-header">Asal & Destinasi</div>
+                        <div class="card-body">
+                            <h5 class="card-title">/penerbangan/{destination}/{source}</h5>
+                            <p class="card-text endpoint-description">End point ini akan menampilkan data penerbangan dengan destinasi dan asal tertentu</p>
+                            <p class="card-text"><span class="method method-post">POST</span></p>
+                        </div>
+                        <table class="table mx-auto">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Url</th>
+                                    <th scope="col">Method</th>
+                                    <th scope="col">Parameter</th>
+                                    <th scope="col">Tipe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>http://127.0.0.1:8000<br>/api/penerbangan</td>
+                                    <td>Post</td>
+                                    <td>source <br> destination</td>
+                                    <td>String</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card endpoint-card">
+                        <div class="card-header">Maskapai & Destinasi</div>
+                        <div class="card-body">
+                            <h5 class="card-title">/penerbangan/{destination}/{airline}</h5>
+                            <p class="card-text endpoint-description">End point ini akan menampilkan data dengan maskapai dan tujuan tertentu</p>
+                            <p class="card-text"><span class="method method-post">POST</span></p>
+                        </div>
+                        <table class="table mx-auto">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Url</th>
+                                    <th scope="col">Method</th>
+                                    <th scope="col">Parameter</th>
+                                    <th scope="col">Tipe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>http://127.0.0.1:8000<br>/api/penerbangan</td>
+                                    <td>Post</td>
+                                    <td>destination <br> airline</td>
+                                    <td>String</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 JagoanTerbang. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

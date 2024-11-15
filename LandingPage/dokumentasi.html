@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Dokumentasi</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #f2f2f2;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #4b5320;
+      padding: 10px 0;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      margin: 5px  15px;
+      font-size: 1.2em;
+    }
+    nav {
+      background: #ffffff;
+      padding: 10px 0;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      padding: 5px 10px;
+    }
+    nav a:hover {
+      color: #4b5320;
+    }
+    nav .menu-item, nav .user-menu {
+      display: inline-block;
+      position: relative;
+      cursor: pointer; /* Menambahkan cursor pointer */
+    }
+    nav .menu-item .dropdown, nav .user-menu .user-dropdown {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 150px;
+      text-align: left;
+      z-index: 1000; /* Menambahkan z-index */
+    }
+    nav .menu-item .dropdown a, nav .user-menu .user-dropdown a {
+      display: block;
+      padding: 10px;
+      color: #333;
+      text-decoration: none;
+    }
+    nav .menu-item .dropdown a:hover, nav .user-menu .user-dropdown a:hover {
+      background: #f2f2f2;
+    }
+    .container {
+      display: flex;
+      flex: 1;
+      padding: 20px;
+      overflow: hidden;
+
+    }
+    .sidebar {
+      width: 200px;
+      background: #fff;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+      overflow-y: auto;
+      max-height: calc(100vh - 68px);
+    }
+    .sidebar a {
+      display: block;
+      padding: 10px 0;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+    }
+    .sidebar a:hover {
+      background: #f2f2f2;
+    }
+    .content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .content h2 {
+      margin-bottom: 20px;
+    }
+    .content p {
+      width: 70%;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      margin-left: 250px;
+      margin-right: 250px;
+    }
+    .table-container {
+      width: 70%;
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    caption {
+        font-size: 1.1em;
+        font-weight:bolder ;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .table th, .table td {
+      border: 1px solid #4b5320;
+      padding: 8px;
+      text-align: center;
+    }
+    .table th {
+      background-color: #4b5320;
+      color: white;
+    }
+    footer {
+      background: #4b5320;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    footer .social-links a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+    footer .social-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>JagoanTerbang</h1>
+    <p>Teman terbang terbaik anda</p>
+  </header>
+  <nav>
+    <a href="#">Beranda</a>
+    <div class="menu-item">
+      <a href="#">Integrasi <span class="fas fa-caret-down"></span></a>
+      <div class="dropdown" id="integrasi-dropdown">
+        <a href="index.html">Dokumentasi</a>
+        <a href="#">Widget</a>
+      </div>
+    </div>
+    <div class="user-menu">
+      <span class="fas fa-user"></span> <a id="akun-menu">Akun <span class="fas fa-caret-down"></span></a>
+      <div class="user-dropdown" id="user-dropdown">
+        <a href="LoginPage/index copy.html">Daftar</a>
+        <a href="LoginPage/index.html">Masuk</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="sidebar">
+      <a href="#">Dokumentasi API</a>
+      <a href="#">Ringkasan</a>
+    </div>
+    <div class="content">
+      <!-- Konten Dokumentasi -->
+      <h2>Selamat datang di JagoanTerbang</h2>
+        <p>JagoanTerbang menyediakan RESTful API (Application Programming Interface) yang dapat  Anda pakai untuk membuat berbagai macam aplikasi yang membutuhkan data penerbangan,ata penerbangan hanya data dummy. JagoanTerbang mudah untuk diintegrasikan karena menggunakan arsitektur REST dengan format balasan berupa JSON yang didukung oleh hampir semua bahasa pemrograman. Bayangkan Anda bisa membuat fitur hitung data penerbangan di  aplikasi mobile untuk android, iOS, dan lain-lain. Sudah dapat ide untuk membuat aplikasi dengan JagoanTerbang Silakan daftar akun untuk mendapatkan API Key, GRATIS!</p>
+      <!-- Tambahkan lebih banyak konten dokumentasi di sini -->
+      <div class="table-container">
+        <table class="table">
+        <caption>Request data penerbangan</caption>
+        <thead>
+            <tr>
+                <th scope="col">Url</th>
+                <th scope="col">Method</th>
+                <th scope="col">Parameter</th>
+                <th scope="col">Tipe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>/api/penerbangan</td>
+                <td>Get</td>
+                <td>-</td>
+                <td>String</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-container">
+        <table class="table">
+        <caption>Request data penerbangan berdasarkan kota destinasi<caption>
+        <thead>
+            <tr>
+                <th scope="col">Url</th>
+                <th scope="col">Method</th>
+                <th scope="col">Parameter</th>
+                <th scope="col">Tipe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>/api/penerbangan/destination/{destinasi}</td>
+                <td>Post</td>
+                <td>destination</td>
+                <td>String</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-container">
+        <table class="table">
+        <caption>Request data penerbangan berdasarkan kota asal</caption>
+        <thead>
+            <tr>
+                <th scope="col">Url</th>
+                <th scope="col">Method</th>
+                <th scope="col">Parameter</th>
+                <th scope="col">Tipe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>/api/penerbangan/source/{sorce}</td>
+                <td>Post</td>
+                <td>source</td>
+                <td>String</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-container">
+        <table class="table">
+        <caption>Request data penerbangan berdasarkan kota asal & destinasi</caption>
+        <thead>
+            <tr>
+                <th scope="col">Url</th>
+                <th scope="col">Method</th>
+                <th scope="col">Parameter</th>
+                <th scope="col">Tipe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>/api/penerbangan/{destinasi}/source/{asal}</td>
+                <td>Post</td>
+                <td>source & destination</td>
+                <td>String</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-container">
+        <table class="table">
+        <caption>Request data penerbangan berdasarkan kota destinasi & maksapai</caption>
+        <thead>
+            <tr>
+                <th scope="col">Url</th>
+                <th scope="col">Method</th>
+                <th scope="col">Parameter</th>
+                <th scope="col">Tipe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>/api/penerbangan/{destinasi}/airline/{maskapai}</td>
+                <td>Post</td>
+                <td>destination & airline </td>
+                <td>String</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div>
+      JagoanTerbang &copy; 2024. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('akun-menu').addEventListener('click', function(event) {
+      event.stopPropagation(); // Mencegah penutupan dropdown saat klik di dalamnya
+      var dropdown = document.getElementById('user-dropdown');
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.querySelector('.menu-item > a').addEventListener('click', function(event) {
+      event.stopPropagation(); // Mencegah penutupan dropdown saat klik di dalamnya
+      var dropdown = document.getElementById('integrasi-dropdown');
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    window.onclick = function(event) {
+      var userDropdowns = document.querySelectorAll(".user-dropdown");
+      userDropdowns.forEach(function(dropdown) {
+        if (dropdown.style.display === 'block') {
+          dropdown.style.display = 'none';
+        }
+      });
+      var dropdowns = document.querySelectorAll(".dropdown");
+      dropdowns.forEach(function(dropdown) {
+        if (dropdown.style.display === 'block') {
+          dropdown.style.display = 'none';
+        }
+      });
+    };
+  </script>
+</body>
+</html>
